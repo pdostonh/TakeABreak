@@ -3,10 +3,25 @@ import { DEFAULT_SETTINGS, PRESET_DEFINITIONS, applyPreset, normalizeSettings } 
 const form = document.getElementById("settings-form");
 const status = document.getElementById("status");
 const presetSelect = document.getElementById("preset");
+let statusTimerId = null;
 
 function setStatus(message, isError = false) {
+  if (statusTimerId) {
+    clearTimeout(statusTimerId);
+    statusTimerId = null;
+  }
+
   status.textContent = message;
   status.style.color = isError ? "#b42318" : "#0f7b45";
+
+  if (!message) {
+    return;
+  }
+
+  statusTimerId = window.setTimeout(() => {
+    status.textContent = "";
+    statusTimerId = null;
+  }, 3000);
 }
 
 function readFormValues() {
@@ -64,6 +79,10 @@ presetSelect.addEventListener("change", () => {
   const merged = applyPreset(presetSelect.value, readFormValues());
   writeFormValues(merged);
   setStatus(`Preset set to ${merged.preset}. Save to apply.`);
+});
+
+form.addEventListener("input", () => {
+  setStatus("");
 });
 
 form.addEventListener("submit", async (event) => {
