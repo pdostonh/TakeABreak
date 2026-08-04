@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Take A Break">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#f5c971"/>
+      <stop offset="1" stop-color="#ff8b5b"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="28" fill="#0f1626"/>
+  <circle cx="64" cy="64" r="38" fill="url(#g)" opacity="0.18"/>
+  <path d="M44 40c7 0 13 3 18 8 5-5 11-8 18-8 13 0 24 11 24 24 0 23-26 40-42 48-16-8-42-25-42-48 0-13 11-24 24-24Z" fill="url(#g)"/>
+  <path d="M52 60h24l-8 12h12L64 90l4-16H56l-4-14Z" fill="#0f1626" opacity="0.9"/>
+</svg>

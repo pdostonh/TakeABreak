@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Take A Break</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main class="popup-shell">
+      <section class="hero">
+        <div class="eyebrow">Take A Break</div>
+        <h1 id="preset">Loading…</h1>
+        <p id="summary">Loading reminder state…</p>
+        <p id="details" class="details"></p>
+      </section>
+
+      <section class="card info">
+        <p>Popup is informational only. Use settings to change reminders, presets, or timing.</p>
+        <button id="open-options" class="primary">Open settings</button>
+      </section>
+
+      <section class="card stats">
+        <div>
+          <span class="label">Breaks completed</span>
+          <strong id="completed">0</strong>
+        </div>
+        <div>
+          <span class="label">Reminders shown</span>
+          <strong id="shown">0</strong>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>

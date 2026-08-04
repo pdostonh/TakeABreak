@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Take A Break Settings</title>
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <main class="layout">
+      <section class="intro card">
+        <div class="eyebrow">Break settings</div>
+        <h1>Choose a preset, then keep the settings simple.</h1>
+        <p>Everything stays local to Chrome. No external packages, no remote assets, and no heavy UI chrome.</p>
+      </section>
+
+      <form id="settings-form" class="card form">
+        <label>
+          <span>Preset</span>
+          <select id="preset" name="preset"></select>
+        </label>
+
+        <label class="toggle-row">
+          <span>
+            <strong>Enable reminders</strong>
+            <small>Master switch for every reminder type.</small>
+          </span>
+          <input type="checkbox" name="enabled" />
+        </label>
+
+        <div class="grid two-up">
+          <label>
+            <span>Focus break interval</span>
+            <input type="number" name="breakInterval" min="1" max="240" />
+          </label>
+          <label>
+            <span>Break duration</span>
+            <input type="number" name="breakDuration" min="1" max="60" />
+          </label>
+          <label>
+            <span>Eye strain interval</span>
+            <input type="number" name="eyeInterval" min="1" max="240" />
+          </label>
+          <label>
+            <span>Water interval</span>
+            <input type="number" name="waterInterval" min="1" max="240" />
+          </label>
+          <label>
+            <span>Stretch interval</span>
+            <input type="number" name="stretchInterval" min="1" max="240" />
+          </label>
+          <label>
+            <span>Stand interval</span>
+            <input type="number" name="standInterval" min="1" max="240" />
+          </label>
+          <label>
+            <span>Snooze minutes</span>
+            <input type="number" name="snoozeMinutes" min="1" max="120" />
+          </label>
+        </div>
+
+        <div class="grid toggles">
+          <label class="toggle-row"><span><strong>Eye strain relief</strong><small>20-20-20 style reminders.</small></span><input type="checkbox" name="eyeReminderEnabled" /></label>
+          <label class="toggle-row"><span><strong>Water reminders</strong><small>Drink water on a steady cadence.</small></span><input type="checkbox" name="waterReminderEnabled" /></label>
+          <label class="toggle-row"><span><strong>Stretch reminders</strong><small>Stand, move, and loosen the shoulders.</small></span><input type="checkbox" name="stretchReminderEnabled" /></label>
+          <label class="toggle-row"><span><strong>Stand reminders</strong><small>Prevent long, locked sitting sessions.</small></span><input type="checkbox" name="standReminderEnabled" /></label>
+        </div>
+
+        <div class="actions">
+          <button type="submit" class="primary">Save settings</button>
+          <button type="button" id="reset" class="secondary">Reset to defaults</button>
+        </div>
+
+        <p id="status" class="status"></p>
+
+        <p class="disclaimer">
+          Warning: reminders and eye exercises are general wellness guidance only, not medical advice. Stop if anything feels wrong.
+        </p>
+      </form>
+    </main>
+    <script type="module" src="options.js"></script>
+  </body>
+</html>
